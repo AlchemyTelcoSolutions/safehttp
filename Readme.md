@@ -1,7 +1,7 @@
 # SafeHTTP Client
 SafeHTTP provides users with a standard http client with sensible defaults that can be used to make http requests to untrusted URLs. This is useful, for instance,
 for dispatching outbound webhook requests with URLs that are provided by customers. SafeHTTP Client inspects the final ip address, instead of simply the provided URL,
-protecting you against the threat of SSRF even if the attacker uses a DNs record that looks harmless, but that points to localhost or other forbidden addresses.
+protecting you against the threat of SSRF even if the attacker uses a DNS record that looks harmless, but that points to localhost or other forbidden addresses.
 
 Much of the code was adapted from [Andrew Ayer's public domain code](https://www.agwa.name/blog/post/preventing_server_side_request_forgery_in_golang).
 ## Installing
