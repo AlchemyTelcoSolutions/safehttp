@@ -5,6 +5,7 @@ import (
 	"net"
 )
 
+// SafeHTTPError is the error type returned by the SafeHTTPClient when an attempt is made to use a forbidden network type or IP address
 type SafeHTTPError struct {
 	Err       error
 	Text      string

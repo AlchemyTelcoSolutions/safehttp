@@ -7,11 +7,14 @@ import (
 	"time"
 )
 
+// Options is a struct that can be passed into NewClient to override the default allow-list of network types and the default forbidden-list of ip addresses
 type Options struct {
 	AllowedNetworkTypes []string
 	ForbiddenIPs        []string
 }
 
+// NewClient returns a pointer to an http.Client with some sensible defaults, plus a custon dialer control that checks the receiving IP address against
+// a forbidden-list, and checks the network type against an allow-list. Both lists have sensible defaults that can be added to by means of the Options struct
 func NewClient(opts Options) *http.Client {
 	opts = getDefaultOpts(opts)
 
