@@ -1,0 +1,20 @@
+.DS_Store
+.vscode
+.idea
+.aws-sam
+.vscode
+
+#test results
+_output
+
+*.test
+*.out
+vendor/
+go.work
+
+#config files/secrets
+*.env
+*.local.json
+*.stage.json
+*.integration.json
+
