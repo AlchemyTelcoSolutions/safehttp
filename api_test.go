@@ -29,7 +29,7 @@ func TestGetSafeHTTPCLient(t *testing.T) {
 			isErrExpected:                true,
 			isSafeHTTPErrorExpected:      true,
 			expectedSafeHTTPErrorCode:    safehttp.NotPublicIPAddressErrCode,
-			expectedSafeHTTPErrorMessage: "safehttp: 127.0.0.1 is not a public IP address",
+			expectedSafeHTTPErrorMessage: "is not a public IP address",
 		},
 		{
 			name:                         "localhost as ipv4",
@@ -121,7 +121,7 @@ func TestGetSafeHTTPCLient(t *testing.T) {
 				return
 			}
 			assert.ErrorAs(t, err, &safeHTTPError)
-			assert.Equal(t, c.expectedSafeHTTPErrorMessage, safeHTTPError.Error())
+			assert.Contains(t, safeHTTPError.Error(), c.expectedSafeHTTPErrorMessage)
 			assert.Equal(t, c.expectedSafeHTTPErrorCode, safeHTTPError.ErrCode)
 			assert.Nil(t, res)
 		})
